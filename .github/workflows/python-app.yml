@@ -38,6 +38,4 @@ jobs:
           echo "$KAGGLE_USERNAME"> ~/.kaggle/kaggle.json
           echo "$KAGGLE_KEY">> ~/.kaggle/kaggle.json
           chmod 600 ~/.kaggle/kaggle.json
-    - name: Run your script
-      run: |
-          python app.py
+  
