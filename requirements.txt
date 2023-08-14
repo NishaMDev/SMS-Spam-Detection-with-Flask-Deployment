@@ -4,7 +4,7 @@ numpy==1.23.2
 pandas
 requests==2.28.1
 kaggle
-scikit-learn==1.1.2
+scikit-learn
 matplotlib 
 seaborn 
 nltk
