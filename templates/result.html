@@ -1,32 +1,67 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
-</head>
-<body>
+  <head>
+    <title></title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="text-center">Simple Spam Detector using Machine Learning</h1>
+        <h2 class="text-center">Spam Detector For SMS Messages</h2>
+      </div>
+    </header>
 
-	<header>
-		<div class="container">
-		<div id="brandname">
-			ML App
-		</div>
-		<h2>Spam Detector For SMS Messages</h2>
-		
-	</div>
-	</header>
-	<p style="color:blue;font-size:20;text-align: center;"><b>Results for Comment</b></p>
-	<div class="results">
+    <div class="container">
+		<p class="lead">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse in
+        mi augue. Aliquam commodo nec dui sit amet gravida. Integer fringilla
+        lacinia sapien, non tincidunt magna sagittis vel. Aenean ac arcu velit.
+        Sed quis ligula id dolor ultrices blandit bibendum at ante. Nunc tortor
+        lectus, tempus posuere orci sed, dapibus lobortis risus. Duis maximus,
+        metus sit amet interdum varius, ipsum mauris tincidunt risus, sit amet
+        iaculis nisl sapien eu dui. Nam et ipsum mattis, euismod velit sed,
+        fringilla nisi. Etiam in arcu nulla. Maecenas vitae pulvinar mauris.
+        Etiam lorem nulla, suscipit eget tortor eu, suscipit sodales arcu.
+        Suspendisse enim dolor, ornare at odio vel, dapibus lobortis mauris.
+        Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer a
+        ligula leo. Integer imperdiet gravida vehicula. Fusce consequat dictum
+        erat ac cursus. Maecenas ac magna ornare, venenatis nibh eget, luctus
+        ipsum. Donec accumsan, velit ac feugiat bibendum, diam sem lobortis
+        sapien, vitae consectetur nunc lorem vel ante. Sed convallis egestas
+        pellentesque. Mauris eget nisi non erat efficitur tristique in at elit.
+        Pellentesque fermentum imperdiet felis, eu ullamcorper velit. Proin
+        ultricies feugiat tortor congue aliquet. Ut cursus diam ex, ut dignissim
+        turpis sodales eu. Etiam pellentesque erat eu lobortis commodo. Praesent
+        porta odio est, faucibus sollicitudin urna accumsan ac. Pellentesque
+        egestas ipsum ut accumsan egestas.
+      </p>
 
+      <p class="lead">
+        <h3>Prediction for given SMS</h3>
+      </p>
+      <div class="results">
+        <p class="lead">
+          <b>{{ message }}</b>
+        </p>
 
-		
-	{% if prediction == 1%}
-	<h2 style="color:red;">Spam</h2>
-	{% elif prediction == 0%}
-	<h2 style="color:blue;">Not a Spam (It is a Ham)</h2>
-	{% endif %}
-
-	</div>
-
-</body>
+        <h3>Results:</h3>
+		{% if prediction == 1%}
+        <h4 style="color: red">Spam</h4>
+        {% elif prediction == 0%}
+        <h4 style="color: blue">Not a Spam (It is a Ham)</h4>
+        {% endif %}
+      </div>
+    </div>
+  </body>
 </html>
