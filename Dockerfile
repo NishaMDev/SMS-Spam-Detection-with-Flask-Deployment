@@ -13,9 +13,9 @@ COPY . ./
 
 # Install core dependencies.
 RUN apt-get update && apt-get install -y libpq-dev build-essential
-
+RUN pip3 install cython
 # Install production dependencies.
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Run the web service on container startup. Here we use the gunicorn
 # webserver, with one worker process and 8 threads.
