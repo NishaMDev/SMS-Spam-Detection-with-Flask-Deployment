@@ -18,31 +18,42 @@
 
   <body>
     <div class="container">
-      <h1 class="text-center">Simple Spam Detector using Machine Learning</h1>
+      <h1 class="text-center">Spam Detector For SMS Messages</h1>
       <img class="img-fluid" id="banner" src="static/image/sms.png" />
-      <h2 class="text-center">Spam Detector For SMS Messages</h2>
+      <h2 class="text-center">
+        About MultinomialNB Algorithm used for building Span Detector
+      </h2>
       <p class="lead">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse in
-        mi augue. Aliquam commodo nec dui sit amet gravida. Integer fringilla
-        lacinia sapien, non tincidunt magna sagittis vel. Aenean ac arcu velit.
-        Sed quis ligula id dolor ultrices blandit bibendum at ante. Nunc tortor
-        lectus, tempus posuere orci sed, dapibus lobortis risus. Duis maximus,
-        metus sit amet interdum varius, ipsum mauris tincidunt risus, sit amet
-        iaculis nisl sapien eu dui. Nam et ipsum mattis, euismod velit sed,
-        fringilla nisi. Etiam in arcu nulla. Maecenas vitae pulvinar mauris.
-        Etiam lorem nulla, suscipit eget tortor eu, suscipit sodales arcu.
-        Suspendisse enim dolor, ornare at odio vel, dapibus lobortis mauris.
-        Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer a
-        ligula leo. Integer imperdiet gravida vehicula. Fusce consequat dictum
-        erat ac cursus. Maecenas ac magna ornare, venenatis nibh eget, luctus
-        ipsum. Donec accumsan, velit ac feugiat bibendum, diam sem lobortis
-        sapien, vitae consectetur nunc lorem vel ante. Sed convallis egestas
-        pellentesque. Mauris eget nisi non erat efficitur tristique in at elit.
-        Pellentesque fermentum imperdiet felis, eu ullamcorper velit. Proin
-        ultricies feugiat tortor congue aliquet. Ut cursus diam ex, ut dignissim
-        turpis sodales eu. Etiam pellentesque erat eu lobortis commodo. Praesent
-        porta odio est, faucibus sollicitudin urna accumsan ac. Pellentesque
-        egestas ipsum ut accumsan egestas.
+        Naive Bayes classifier for multinomial models. The multinomial Naive
+        Bayes classifier is suitable for classification with discrete features
+        (e.g., word counts for text classification). The multinomial
+        distribution normally requires integer feature counts. However, in
+        practice, fractional counts such as tf-idf may also work. Naive Bayes is
+        a probabilistic classification algorithm that applies Bayes' theorem
+        with an assumption of independence between features. It calculates the
+        probabilities of a data point belonging to each class and assigns it to
+        the class with the highest probability. MultinomialNB extends the Naive
+        Bayes algorithm to handle multiclass classification problems, where
+        there are more than two classes. It assumes that the features'
+        probability follows a multinomial distribution, which makes it suitable
+        for text classification tasks where features represent counts or
+        frequencies of word occurrences in documents. In text classification,
+        MultinomialNB can be trained on a labeled dataset of documents, where
+        each document is represented by the word counts or term
+        frequency-inverse document frequency (TF-IDF) values. It then uses these
+        features to calculate the probabilities of a new document belonging to
+        each class. The class with the highest probability is assigned as the
+        predicted class for the document.
+      </p>
+
+      <p class="lead">
+        We also use CountVectorizer as a text preprocessing technique for
+        converting a collection of text documents into a numerical matrix
+        representation. It is a feature extraction method used to transform text
+        data into a format suitable for machine learning algorithms. Once the
+        model is build, we can use it to predict whether a message is spam or
+        not. We have used Flask to display the prediction on web browser. We
+        have also used HTML and CSS to design the web page.
       </p>
     </div>
 
