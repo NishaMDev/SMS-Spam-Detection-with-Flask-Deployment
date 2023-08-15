@@ -1,4 +1,4 @@
-from flask import Flask,render_template,url_for,request
+from flask import Flask,render_template,url_for,request, redirect
 import pandas as pd 
 import pickle
 from sklearn.feature_extraction.text import CountVectorizer
@@ -28,10 +28,15 @@ def predict():
         data = [message]
         vect = cv.transform(data).toarray()
         my_prediction = clf.predict(vect)
-    return render_template('result.html',prediction = my_prediction, message = message)
+    #return render_template('result.html',prediction = my_prediction, message = message)
+    return redirect(url_for('result',prediction = my_prediction[0], message = message))
 
+@app.route('/result')
+def result():
+    prediction = request.args.get('prediction')
+    message = request.args.get('message')
+    return render_template('result.html', prediction=int(prediction), message=message)
 
 
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', debug=False)
   app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
